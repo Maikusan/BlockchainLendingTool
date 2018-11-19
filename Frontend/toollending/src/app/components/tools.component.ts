@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tools',
-  template: `
-    <p>
-      tools works!
-    </p>
-  `,
+  templateUrl: './tools.component.html',
   styles: []
 })
 export class ToolsComponent implements OnInit {
