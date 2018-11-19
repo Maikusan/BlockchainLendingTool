@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-transactions',
-  template: `
-    <p>
-      transactions works!
-    </p>
-  `,
+  templateUrl: './transaction.component.html',
   styles: []
 })
 export class TransactionsComponent implements OnInit {
