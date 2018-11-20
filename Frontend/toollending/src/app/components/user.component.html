@@ -1,26 +1,27 @@
-<img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" style="display: block;margin-left: auto;margin-right: auto;margin-top:10px;margin-bottom:10px" />
-<mat-grid-list cols="1" rowHeight="50">
+<img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" style="display: block;margin-left: auto;margin-right: auto;margin-top:10px;margin-bottom:10px;width:300px;" />
+<mat-grid-list cols="1" rowHeight="70">
     <mat-grid-tile>
         <mat-form-field>
-            <input matInput placeholder="Vorname">
+            <input matInput placeholder="Vorname" [value]="currentUser.Vorname">
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile>
         <mat-form-field>
-            <input matInput placeholder="Nachname">
+            <input matInput placeholder="Nachname" [value]="currentUser.Nachname">
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile>
         <mat-form-field>
-            <input matInput placeholder="E-Mail">
+            <input matInput placeholder="E-Mail" [value]="currentUser.Email">
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile>
         <mat-form-field>
-            <input matInput placeholder="ETH-Konto">
+            <input matInput placeholder="ETH-Konto" [value]="currentUser.ETCKonto">
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile>
         <button mat-raised-button color="primary">save</button>
     </mat-grid-tile>
   </mat-grid-list>
+  <p></p>
