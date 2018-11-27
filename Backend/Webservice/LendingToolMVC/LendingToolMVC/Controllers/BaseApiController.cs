@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Web;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 using MongoDB.Driver;
 using Newtonsoft.Json;
 
@@ -13,10 +14,6 @@ namespace LendingToolMVC.Controllers
 {
     public class BaseApiController : ApiController
     {
-        protected const string Tempfolder = @"C:\KPITool\temp\";
-        protected const string Dynamicfolder = Tempfolder + @"latest\";
-        protected const string Staticfolder = Tempfolder + @"static\";
-
         protected static IMongoClient Client;
         protected static IMongoDatabase Database;
 
@@ -28,8 +25,9 @@ namespace LendingToolMVC.Controllers
 
         protected HttpResponseMessage ToJson(dynamic obj)
         {
+            var serializer = new JavaScriptSerializer();
             var response = this.Request.CreateResponse(HttpStatusCode.OK);
-            response.Content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
+            response.Content = new StringContent(serializer.Serialize(obj), encoding: Encoding.UTF8, mediaType: "application/json");
             return response;
         }
 

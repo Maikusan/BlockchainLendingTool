@@ -13,23 +13,34 @@ using LendingToolMVC.Models;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
+using MongoDB.Driver.Builders;
+using MongoDB.Driver.GridFS;
+using MongoDB.Driver.Linq;
 
 namespace LendingToolMVC.Controllers
 {
-    public class UserApiController : BaseApiController
+    public class UsersController : BaseApiController
     {
-
-        public HttpResponseMessage Get()
+        public IEnumerable<User> GetAllUsers()
         {
             this.IntitalizeDatabase();
             var collection = Database.GetCollection<BsonDocument>("users");
             var test = collection.Find(a => true).ToList();
-            var returnList = new List<User>();
             if (test.Count != 0)
             {
-                returnList = test.Select(kpi => BsonSerializer.Deserialize<User>(kpi)).ToList();
+                return test.Select(kpi => BsonSerializer.Deserialize<User>(kpi));
             }
-            return this.ToJson(returnList);
+            return null;
+        }
+
+        public User GetUser(int id)
+        {
+            this.IntitalizeDatabase();
+            var collection = Database.GetCollection<User>("users");
+            var query = Query.EQ("_id", id);
+            var oid = new ObjectId();
+            var entity = collection.Find(a => a.Id == oid).FirstOrDefault();
+            return entity;
         }
     }
 }
