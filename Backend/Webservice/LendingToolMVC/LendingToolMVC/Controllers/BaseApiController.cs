@@ -27,7 +27,7 @@ namespace LendingToolMVC.Controllers
         {
             var serializer = new JavaScriptSerializer();
             var response = this.Request.CreateResponse(HttpStatusCode.OK);
-            response.Content = new StringContent(serializer.Serialize(obj), encoding: Encoding.UTF8, mediaType: "application/json");
+            response.Content = new StringContent(serializer.Serialize(obj), encoding: Encoding.UTF8, mediaType: "/json");
             return response;
         }
 

@@ -8,7 +8,7 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.httpClient.get<any>('http://localhost:61702/api/users')
+    return this.httpClient.get<any>('http://localhost:61702/users')
   }
 
   private handleError(error: Response) {

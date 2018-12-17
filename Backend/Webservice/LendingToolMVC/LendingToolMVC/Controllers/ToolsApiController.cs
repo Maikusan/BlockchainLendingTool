@@ -24,40 +24,42 @@ namespace LendingToolMVC.Controllers
 {
     [Route("api/[controller]")]
     /// <summary>
-    /// User Controller
+    /// Tool Controller
     /// </summary>
-    public class UsersController : BaseApiController
+    public class ToolsController : BaseApiController
     {
 
-        [Route("users")]
+        [Route("tools")]
         [HttpGet]
         /// <summary>
-        /// Get All User from Database
+        /// Get All Tool from Database
         /// </summary>
-        /// <returns>All User from Database</returns>
-        public IEnumerable<User> GetAllUsers()
+        /// <returns>All Tool from Database</returns>
+        public IEnumerable<Tool> GetAllTools()
         {
             this.IntitalizeDatabase();
-            var collection = Database.GetCollection<BsonDocument>("users");
+            var collection = Database.GetCollection<BsonDocument>("tools");
             var test = collection.Find(a => true).ToList();
             if (test.Count != 0)
             {
-                return test.Select(kpi => BsonSerializer.Deserialize<User>(kpi));
+                return test.Select(kpi => BsonSerializer.Deserialize<Tool>(kpi));
             }
             return null;
         }
 
-        [Route("user/{userId}")]
+
+
+        [Route("tools/{toolId}")]
         [HttpGet]
         /// <summary>
-        /// Get Users a specific User from d
+        /// Get Tools a specific Tool from d
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public User GetUser(int id)
+        public Tool GetTool(int id)
         {
             this.IntitalizeDatabase();
-            var collection = Database.GetCollection<User>("users");
+            var collection = Database.GetCollection<Tool>("tools");
             var query = Query.EQ("_id", id);
             var oid = "Jesus";
             var entity = collection.Find(a => a.Id == oid).FirstOrDefault();
@@ -65,16 +67,16 @@ namespace LendingToolMVC.Controllers
         }
 
         [HttpPost]
-        public HttpResponseMessage Add(User user)
+        public HttpResponseMessage Add(Tool tool)
         {
 
             this.IntitalizeDatabase();
-            var collection = Database.GetCollection<BsonDocument>("users");
+            var collection = Database.GetCollection<BsonDocument>("tools");
             var noError = "true";
-            user.Id = Guid.NewGuid().ToString();
+            tool.Id = Guid.NewGuid().ToString();
             try
             {
-                collection.InsertOneAsync(user.ToBsonDocument());
+                collection.InsertOneAsync(tool.ToBsonDocument());
             }
             catch (Exception e)
             {

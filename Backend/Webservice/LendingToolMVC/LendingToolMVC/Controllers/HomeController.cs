@@ -15,7 +15,7 @@ namespace LendingToolMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your  description page.";
 
             return View();
         }

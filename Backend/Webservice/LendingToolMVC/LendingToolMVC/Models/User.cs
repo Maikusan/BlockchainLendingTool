@@ -8,16 +8,22 @@ using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace LendingToolMVC.Models
 {
+    [BsonDiscriminator("User")]
     public class User
     {
-        public ObjectId Id { get; set; }
+        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        public string Id { get; set; }
 
+        [BsonElement("Vorname")]
         public string Vorname { get; set; }
 
+        [BsonElement("Nachname")]
         public string Nachname { get; set; }
 
+        [BsonElement("Email")]
         public string Email { get; set; }
 
+        [BsonElement("ETCKonto")]
         public string ETCKonto { get; set; }
     }
 }
