@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './components/user.component';
 import { TransactionsComponent } from './components/transactions.component';
 import { ToolsComponent } from './components/tools.component';
+import { VotingComponent } from './components/voting.component';
 
 import {
   MatAutocompleteModule,
@@ -45,6 +46,7 @@ import {
   MatStepperModule,
 } from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
+
 
 @NgModule({
   exports: [
@@ -91,7 +93,8 @@ export class DemoMaterialModule {}
     AppComponent,
     UserComponent,
     TransactionsComponent,
-    ToolsComponent
+    ToolsComponent,
+    VotingComponent
   ],
   imports: [
     BrowserModule,

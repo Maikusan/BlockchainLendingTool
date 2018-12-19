@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   <span style="padding: 0 14px;cursor:pointer" [routerLink]="[ 'user']"> User </span>
   <span style="padding: 0 14px;cursor:pointer" [routerLink]="[ 'tools']"> Tools </span>
   <span style="padding: 0 14px;cursor:pointer" [routerLink]="[ 'transaction']"> Transaction </span>
+  <span style="padding: 0 14px;cursor:pointer" [routerLink]="[ 'allVotes']"> Votings </span>
 </mat-toolbar>
 <div class="container" style="background:#F0F0F0">
   <router-outlet></router-outlet>
