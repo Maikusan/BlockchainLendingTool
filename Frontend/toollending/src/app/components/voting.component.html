@@ -1,32 +1,28 @@
 <div>
-    <mat-grid-list cols="2">
-        <mat-grid-tile>
-            Toollord
+    <mat-grid-list cols="2" rowHeight="100px">
+        <mat-grid-tile style="height:100px;border-right: 0.1px solid black">
+            <h1>Toollord</h1>
         </mat-grid-tile>
-        <mat-grid-tile>
-            Tenenat
+        <mat-grid-tile style="height:100px">
+            <h1>Tenenat</h1>
         </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-form-field class="example-full-width">
-                <textarea matInput placeholder="Leave a comment"></textarea>
-            </mat-form-field>
+        <mat-grid-tile rowspan="4" style="border-right: 0.1px solid black">
+                <p style="margin:5px">Als ich Ihm den Gegestand gegeben habe war noch alles ok. Jetzt Fehlr der Denkel und alles ist kapput. Der Gegestand ist Beschädigt und ich muss Ihn reparieren. </p>
         </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-form-field class="example-full-width">
-                <textarea matInput placeholder="Leave a comment"></textarea>
-            </mat-form-field>
+        <mat-grid-tile  rowspan="4">
+                <p style="margin:5px">Ich habe Fotos die vor dem Ausleihen gemacht wurden welche Beweisen das der Gegenstand schon kappurt war.</p>
         </mat-grid-tile>
-        <mat-grid-tile>
+        <mat-grid-tile style="border-right: 0.1px solid black">
             <button mat-raised-button color="primary" (click)="onAddClick()" style="margin:5px">Vote For Landlord</button>    
         </mat-grid-tile>
         <mat-grid-tile>
             <button mat-raised-button color="primary" (click)="onAddClick()" style="margin:5px">Vote For Tenenat</button>    
         </mat-grid-tile>
         <mat-grid-tile>
-            17%
+            <p>17%</p>
         </mat-grid-tile>
         <mat-grid-tile>
-            83%
+           <p>83%</p> 
         </mat-grid-tile>
     </mat-grid-list>
 </div>

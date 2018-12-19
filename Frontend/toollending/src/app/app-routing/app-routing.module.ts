@@ -4,12 +4,14 @@ import { UserComponent } from '../components/user.component';
 import { TransactionsComponent } from '../components/transactions.component';
 import { ToolsComponent } from '../components/tools.component';
 import { VotingComponent } from '../components/voting.component';
+import { AllVotingsComponent } from '../components/allvotings.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'tools',        component: ToolsComponent },
   { path: 'transaction',        component: TransactionsComponent },
   { path: 'vote',        component: VotingComponent },
+  { path: 'allVotes',        component: AllVotingsComponent },
   { path: '',   redirectTo: '/user', pathMatch: 'full' },
 ];
 

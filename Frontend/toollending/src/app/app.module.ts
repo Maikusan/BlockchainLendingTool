@@ -11,6 +11,8 @@ import { UserComponent } from './components/user.component';
 import { TransactionsComponent } from './components/transactions.component';
 import { ToolsComponent } from './components/tools.component';
 import { VotingComponent } from './components/voting.component';
+import { AllVotingsComponent } from './components/allvotings.component';
+
 
 import {
   MatAutocompleteModule,
@@ -94,7 +96,8 @@ export class DemoMaterialModule {}
     UserComponent,
     TransactionsComponent,
     ToolsComponent,
-    VotingComponent
+    VotingComponent,
+    AllVotingsComponent
   ],
   imports: [
     BrowserModule,

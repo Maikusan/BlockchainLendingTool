@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-votings',
-  templateUrl: './voting.component.html',
+  templateUrl: './allvotings.component.html',
   styles: []
 })
 
-export class VotingComponent implements OnInit {
+export class AllVotingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.AddVoting = new Voting;
