@@ -23,7 +23,7 @@ namespace LendingToolMVC.Models
         [BsonElement("DepoPrice")]
         public int DepoPrice { get; set; }
 
-        [BsonElement("Vorname")]
+        [BsonElement("Availible")]
         public bool Availible { get; set; }
 
         [BsonElement("Name")]

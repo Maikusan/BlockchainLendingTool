@@ -1,208 +1,48 @@
+<div class="example-container">
+    <input type="text"  placeholder="lendingPrice" [(ngModel)]="AddTool.lendingPrice" style="width: 380px;margin:12px"/>
+    <input type="text"  placeholder="depoPricee" [(ngModel)]="AddTool.depoPricee" style="width: 380px;margin:12px"/>
+    <input type="text"  placeholder="Name" [(ngModel)]="AddTool.name" style="width: 380px;margin:12px"/>
+    <input type="text"  placeholder="descriptipon" [(ngModel)]="AddTool.descriptipon" style="width: 380px;margin:12px"/>
+    <button mat-raised-button color="primary" (click)="onAddClick()">Add</button>
+  </div>
 <mat-grid-list cols="7" rowHeight="50">
     <mat-grid-tile>
-        <p>Lender</p>
+        <p>Owner</p>
     </mat-grid-tile>
     <mat-grid-tile>
-        <p>Lending</p>
+        <p>LendingPrice</p>
     </mat-grid-tile>
     <mat-grid-tile>
-        <p>What</p>
+        <p>DepoPrice</p>
     </mat-grid-tile>
     <mat-grid-tile>
-        <p>Deposite Amount (ETH)<p>
+        <p>Name</p>
     </mat-grid-tile>
     <mat-grid-tile>
-        <p>Start Date</p>
+        <p>Descriptipon</p>
     </mat-grid-tile>
     <mat-grid-tile>
-        <p>End Date</p>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <p>Returned</p>
+        <p>Lend</p>
     </mat-grid-tile>
 </mat-grid-list>
 <mat-divider></mat-divider>
-<mat-grid-list cols="7" rowHeight="50" style="background-color:white">
+<mat-grid-list cols="7" rowHeight="50" style="background-color:white" *ngFor="let yoloTool of Tools"> 
         <mat-grid-tile>
-            <p>Alex</p>
+            <p>{{yoloTool.Owner}}</p>
         </mat-grid-tile>
         <mat-grid-tile>
-            <p>Ich</p>
+            <p>{{yoloTool.lendingPrice}}</p>
         </mat-grid-tile>
         <mat-grid-tile>
-            <p>Bohrmaschine</p>
+            <p>{{yoloTool.DepoPrice}}</p>
         </mat-grid-tile>
         <mat-grid-tile>
-            <p> 6 Ether <p>
+            <p>{{yoloTool.Name}}<p>
         </mat-grid-tile>
         <mat-grid-tile>
-            <p>4.10.2016</p>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <p>12.12.2016</p>
+            <p>{{yoloTool.descriptipon}}</p>
         </mat-grid-tile>
         <mat-grid-tile>
             <button mat-raised-button color="warn">returned</button>
         </mat-grid-tile>
     </mat-grid-list>
-    <mat-grid-list cols="7" rowHeight="50" style="background-color:white">
-            <mat-grid-tile>
-                <p>Alex</p>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <p>Ich</p>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <p>Bohrmaschine</p>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <p> 6 Ether <p>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <p>4.10.2016</p>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <p>12.12.2016</p>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <button mat-raised-button color="warn">returned</button>
-            </mat-grid-tile>
-        </mat-grid-list>
-        <mat-grid-list cols="7" rowHeight="50" style="background-color:white">
-                <mat-grid-tile>
-                    <p>Alex</p>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <p>Ich</p>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <p>Bohrmaschine</p>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <p> 6 Ether <p>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <p>4.10.2016</p>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <p>12.12.2016</p>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <button mat-raised-button color="warn">returned</button>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-grid-list cols="7" rowHeight="50" style="background-color:white">
-                    <mat-grid-tile>
-                        <p>Alex</p>
-                    </mat-grid-tile>
-                    <mat-grid-tile>
-                        <p>Ich</p>
-                    </mat-grid-tile>
-                    <mat-grid-tile>
-                        <p>Bohrmaschine</p>
-                    </mat-grid-tile>
-                    <mat-grid-tile>
-                        <p> 6 Ether <p>
-                    </mat-grid-tile>
-                    <mat-grid-tile>
-                        <p>4.10.2016</p>
-                    </mat-grid-tile>
-                    <mat-grid-tile>
-                        <p>12.12.2016</p>
-                    </mat-grid-tile>
-                    <mat-grid-tile>
-                        <button mat-raised-button color="warn">returned</button>
-                    </mat-grid-tile>
-                </mat-grid-list>
-                <mat-grid-list cols="7" rowHeight="50" style="background-color:white">
-                        <mat-grid-tile>
-                            <p>Alex</p>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                            <p>Ich</p>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                            <p>Bohrmaschine</p>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                            <p> 6 Ether <p>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                            <p>4.10.2016</p>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                            <p>12.12.2016</p>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                            <button mat-raised-button color="warn">returned</button>
-                        </mat-grid-tile>
-                    </mat-grid-list>
-                    <mat-grid-list cols="7" rowHeight="50" style="background-color:white">
-                            <mat-grid-tile>
-                                <p>Alex</p>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <p>Ich</p>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <p>Bohrmaschine</p>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <p> 6 Ether <p>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <p>4.10.2016</p>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <p>12.12.2016</p>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                <button mat-raised-button color="warn">returned</button>
-                            </mat-grid-tile>
-                        </mat-grid-list>
-                        <mat-grid-list cols="7" rowHeight="50" style="background-color:white">
-                                <mat-grid-tile>
-                                    <p>Alex</p>
-                                </mat-grid-tile>
-                                <mat-grid-tile>
-                                    <p>Ich</p>
-                                </mat-grid-tile>
-                                <mat-grid-tile>
-                                    <p>Bohrmaschine</p>
-                                </mat-grid-tile>
-                                <mat-grid-tile>
-                                    <p> 6 Ether <p>
-                                </mat-grid-tile>
-                                <mat-grid-tile>
-                                    <p>4.10.2016</p>
-                                </mat-grid-tile>
-                                <mat-grid-tile>
-                                    <p>12.12.2016</p>
-                                </mat-grid-tile>
-                                <mat-grid-tile>
-                                    <button mat-raised-button color="warn">returned</button>
-                                </mat-grid-tile>
-                            </mat-grid-list>
-                            <mat-grid-list cols="7" rowHeight="50" style="background-color:white">
-                                    <mat-grid-tile>
-                                        <p>Alex</p>
-                                    </mat-grid-tile>
-                                    <mat-grid-tile>
-                                        <p>Ich</p>
-                                    </mat-grid-tile>
-                                    <mat-grid-tile>
-                                        <p>Bohrmaschine</p>
-                                    </mat-grid-tile>
-                                    <mat-grid-tile>
-                                        <p> 6 Ether <p>
-                                    </mat-grid-tile>
-                                    <mat-grid-tile>
-                                        <p>4.10.2016</p>
-                                    </mat-grid-tile>
-                                    <mat-grid-tile>
-                                        <p>12.12.2016</p>
-                                    </mat-grid-tile>
-                                    <mat-grid-tile>
-                                        <button mat-raised-button color="warn">returned</button>
-                                    </mat-grid-tile>
-                                </mat-grid-list>

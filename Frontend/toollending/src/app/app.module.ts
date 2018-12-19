@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { UserService } from './service/user.service';
+import { ToolService } from './service/tool.service';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user.component';
 import { TransactionsComponent } from './components/transactions.component';
@@ -100,7 +101,7 @@ export class DemoMaterialModule {}
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [UserService],
+  providers: [UserService, ToolService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

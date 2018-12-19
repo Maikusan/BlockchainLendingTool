@@ -66,6 +66,7 @@ namespace LendingToolMVC.Controllers
             return entity;
         }
 
+        [Route("tools")]
         [HttpPost]
         public HttpResponseMessage Add(Tool tool)
         {
