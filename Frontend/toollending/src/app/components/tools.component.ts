@@ -3,6 +3,12 @@ import { ToolService } from '../service/tool.service';
 import { Tool } from '../classes/tool';
 import { Observable } from 'rxjs';
 
+
+export interface Categorie {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-tools',
   templateUrl: './tools.component.html',
@@ -10,6 +16,19 @@ import { Observable } from 'rxjs';
 })
 
 export class ToolsComponent implements OnInit {
+
+  ownerCategories: Categorie[] = [
+    {value: 'all', viewValue: 'All'},
+    {value: 'myself', viewValue: 'Myself'},
+    {value: 'others', viewValue: 'Only Others'}
+  ];
+
+  toolCategories: Categorie[] = [
+    {value: 'All', viewValue: 'All'},
+    {value: 'bohrmaschine', viewValue: 'Bohrmaschine'},
+    {value: 'saege', viewValue: 'Saege'},
+    {value: 'hammer', viewValue: 'Hammer'}
+  ];
 
   ngOnInit(): void {
     this.AddTool = new Tool;
@@ -31,8 +50,7 @@ export class ToolsComponent implements OnInit {
         for (let count = 0; count < sTool.length; count++) {
                 
             const curentTool = sTool[count];
-            let test: Tool = { id: curentTool.Id, name: curentTool.Id, ownerId: "Hallo", lendingPrice: curentTool.lendingPrice, depoPrice: curentTool.depoPrice, descriptipon: curentTool.descriptipon, availible: true }
-            jesusTool.push(test);                      
+            jesusTool.push(curentTool);                      
                             
         }
         this.Tools = jesusTool;

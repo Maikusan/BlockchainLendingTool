@@ -1,11 +1,38 @@
-<div class="example-container">
+<div>
+    <mat-grid-list cols="3" rowHeight="50">
+        <mat-grid-tile style="width:100px">
+            <mat-form-field>
+                <mat-select placeholder="Owner">
+                        <mat-option *ngFor="let owner of ownerCategories" [value]="owner.value">
+                            {{owner.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile style="width:100px">
+            <mat-form-field>
+                    <mat-select placeholder="Categorie">
+                        <mat-option *ngFor="let tool of toolCategories" [value]="tool.value">
+                            {{tool.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-raised-button color="primary" (click)="onAddClick()" style="margin:5px">Add</button>    
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+      
+<!--
+    <div class="example-container">
     <input type="text"  placeholder="lendingPrice" [(ngModel)]="AddTool.lendingPrice" style="width: 380px;margin:12px"/>
     <input type="text"  placeholder="depoPricee" [(ngModel)]="AddTool.depoPricee" style="width: 380px;margin:12px"/>
     <input type="text"  placeholder="Name" [(ngModel)]="AddTool.name" style="width: 380px;margin:12px"/>
     <input type="text"  placeholder="descriptipon" [(ngModel)]="AddTool.descriptipon" style="width: 380px;margin:12px"/>
-    <button mat-raised-button color="primary" (click)="onAddClick()">Add</button>
+    
   </div>
-<mat-grid-list cols="7" rowHeight="50">
+    <mat-grid-list cols="7" rowHeight="50">
     <mat-grid-tile>
         <p>Owner</p>
     </mat-grid-tile>
@@ -22,11 +49,14 @@
         <p>Descriptipon</p>
     </mat-grid-tile>
     <mat-grid-tile>
+        <p>Image</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
         <p>Lend</p>
     </mat-grid-tile>
 </mat-grid-list>
 <mat-divider></mat-divider>
-<mat-grid-list cols="7" rowHeight="50" style="background-color:white" *ngFor="let yoloTool of Tools"> 
+    <mat-grid-list cols="7" rowHeight="50" style="background-color:white" *ngFor="let yoloTool of Tools"> 
         <mat-grid-tile>
             <p>{{yoloTool.Owner}}</p>
         </mat-grid-tile>
@@ -46,3 +76,163 @@
             <button mat-raised-button color="warn">returned</button>
         </mat-grid-tile>
     </mat-grid-list>
+-->
+
+    <mat-grid-list cols="3" rowHeight="650" style="background-color:white"> 
+            <mat-grid-tile>
+                    <mat-card style="height:600px">
+                            <mat-card-header style="height:100px">
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>18,0 Volt Akku-Schlagbohrschrauber (bürstenlos)</mat-card-title>
+                              <mat-card-subtitle>Bohrmaschine</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://www.bauundhobby.ch/img/products/930Wx620H/6164011_001.jpg?_=1539352613555" alt="Photo of a Shiba Inu" style="width:200px">
+                            <mat-card-content style="height:300px">
+                              <p>
+                                    Höhere Leistung, kompaktere Abmessungen, 57% längere Laufzeit pro Akku-Ladung sowie höhere Lebensdauer durch neueste Generation bürstenloser Motor-Technologie. Optimal abgestimmtes 2-Gang-Vollmetallgetriebe für perfekte Kraftübertragung. Problemloser Langzeiteinsatz durch Sicherheitselektronik (permanente Über- prüfung von Akku-Temperatur, Stromentnahme und Entladeschutz).
+                              </p>
+                              <p>LendingPrice: 2 etc</p>
+                              <p>Depo: 10 etc</p>
+                              <p>Owner: Michi Zimmermann</p>
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87691.51342183871!2d7.970735584540627!3d46.619653629857176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f9eab18c79217%3A0xbfaa5c0f42972f65!2sGrindelwald!5e0!3m2!1sde!2sch!4v1545217053830" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button mat-raised-button color="warn">Rent</button>
+                            </mat-card-actions>
+                    </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <mat-card style="height:600px">
+                            <mat-card-header style="height:100px">
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>Einhell Power X-Change Akku-Schlagbohrschrauber BL TE-CD 18 Li-i BL (2x2,0Ah)</mat-card-title>
+                              <mat-card-subtitle>Bohrmaschine</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://www.bauundhobby.ch/img/products/930Wx620H/6111424_001.jpg?_=1527143246526" alt="Photo of a Shiba Inu" style="width:200px">
+                            <mat-card-content style="height:300px">
+                              <p>
+                                    Der Einhell Akku-Schlagbohrschrauber TE-CD 18 Li-i BL bietet mit dem bürstenlosen Motor mehr Leistung und eine längere Laufzeit. Als Mitglied der Power X-Change-Familie können alle Akkus der Serie verwendet werden. Zusätzlich verfügt der Schlagbohrschrauber über ein Zweigang-Getriebe für kraftvolles Schrauben und schnelles Bohren. Die Quick-Stop-Funktion ermöglicht einen einfachen Werkzeugwechsel für den Einsatz in das hochwertige 13 mm-Metallbohrfutter. Die Gelenke des Anwenders werden durch den Zusatzhandgriff geschont, ein ergonomisches Design mit Softgrip sorgt für ein angenehmes Arbeiten.
+                              </p>
+                              <p>LendingPrice: 5 etc</p>
+                              <p>Depo: 20 etc</p>
+                              <p>Owner: Michi Zimmermann</p>
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5426.609145866477!2d8.445842742618183!3d47.15188899285513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479000376526e507%3A0x24b91c146346f525!2sTisch+%2B+Bar+Shoppingrestaurant!5e0!3m2!1sde!2sch!4v1545217604837" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button mat-raised-button color="warn">Rent</button>
+                            </mat-card-actions>
+                    </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <mat-card style="height:600px">
+                            <mat-card-header style="height:100px">
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>Bosch Stichsäge PST 18 Li</mat-card-title>
+                              <mat-card-subtitle>Stichsäge</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://www.bauundhobby.ch/img/products/930Wx620H/4073302_001.jpg?_=1511417373315" alt="Photo of a Shiba Inu" style="width:200px">
+                            <mat-card-content style="height:300px">
+                              <p>
+                                    Lithium-Ionen-Akku-Stichsäge PST 18 LI (ohne Akku und Ladegerät): die erste Kombination von kompakt und kabellos im Stichsägenmarkt. Kompakte Grösse, geringes Gewicht und hervorragende Handlichkeit sorgen für kontrollierten und optimalen Benutzerkomfort. Separat erhältlich: leistungsstarker Li-Ion-Akku und 1-Std.-Lader, einsetzbar in allen Geräten des Bosch-18-V-Systems.
+                              </p>
+                              <p>LendingPrice: 5 etc</p>
+                              <p>Depo: 15 etc</p>
+                              <p>Owner: Michi Zimmermann</p>
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13673.986245977732!2d8.44529338146849!3d47.15271197357519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3a1a934c17ed4035!2sBAUERNHOF+Bar+Bistro!5e0!3m2!1sde!2sch!4v1545217790105" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button mat-raised-button color="warn">Rent</button>
+                            </mat-card-actions>
+                    </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <mat-card style="height:600px">
+                            <mat-card-header style="height:100px">
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>18,0 Volt Akku-Schlagbohrschrauber (bürstenlos)</mat-card-title>
+                              <mat-card-subtitle>Bohrmaschine</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://www.bauundhobby.ch/img/products/930Wx620H/6164011_001.jpg?_=1539352613555" alt="Photo of a Shiba Inu" style="width:200px">
+                            <mat-card-content style="height:300px">
+                              <p>
+                                    Höhere Leistung, kompaktere Abmessungen, 57% längere Laufzeit pro Akku-Ladung sowie höhere Lebensdauer durch neueste Generation bürstenloser Motor-Technologie. Optimal abgestimmtes 2-Gang-Vollmetallgetriebe für perfekte Kraftübertragung. Problemloser Langzeiteinsatz durch Sicherheitselektronik (permanente Über- prüfung von Akku-Temperatur, Stromentnahme und Entladeschutz).
+                              </p>
+                              <p>LendingPrice: 2 etc</p>
+                              <p>Depo: 10 etc</p>
+                              <p>Owner: Michi Zimmermann</p>
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87691.51342183871!2d7.970735584540627!3d46.619653629857176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f9eab18c79217%3A0xbfaa5c0f42972f65!2sGrindelwald!5e0!3m2!1sde!2sch!4v1545217053830" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button mat-raised-button color="warn">Rent</button>
+                            </mat-card-actions>
+                    </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <mat-card style="height:600px">
+                            <mat-card-header style="height:100px">
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>18,0 Volt Akku-Schlagbohrschrauber (bürstenlos)</mat-card-title>
+                              <mat-card-subtitle>Bohrmaschine</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://www.bauundhobby.ch/img/products/930Wx620H/6164011_001.jpg?_=1539352613555" alt="Photo of a Shiba Inu" style="width:200px">
+                            <mat-card-content style="height:300px">
+                              <p>
+                                    Höhere Leistung, kompaktere Abmessungen, 57% längere Laufzeit pro Akku-Ladung sowie höhere Lebensdauer durch neueste Generation bürstenloser Motor-Technologie. Optimal abgestimmtes 2-Gang-Vollmetallgetriebe für perfekte Kraftübertragung. Problemloser Langzeiteinsatz durch Sicherheitselektronik (permanente Über- prüfung von Akku-Temperatur, Stromentnahme und Entladeschutz).
+                              </p>
+                              <p>LendingPrice: 2 etc</p>
+                              <p>Depo: 10 etc</p>
+                              <p>Owner: Michi Zimmermann</p>
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87691.51342183871!2d7.970735584540627!3d46.619653629857176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f9eab18c79217%3A0xbfaa5c0f42972f65!2sGrindelwald!5e0!3m2!1sde!2sch!4v1545217053830" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button mat-raised-button color="warn">Rent</button>
+                            </mat-card-actions>
+                    </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <mat-card style="height:600px">
+                            <mat-card-header style="height:100px">
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>18,0 Volt Akku-Schlagbohrschrauber (bürstenlos)</mat-card-title>
+                              <mat-card-subtitle>Bohrmaschine</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://www.bauundhobby.ch/img/products/930Wx620H/6164011_001.jpg?_=1539352613555" alt="Photo of a Shiba Inu" style="width:200px">
+                            <mat-card-content style="height:300px">
+                              <p>
+                                    Höhere Leistung, kompaktere Abmessungen, 57% längere Laufzeit pro Akku-Ladung sowie höhere Lebensdauer durch neueste Generation bürstenloser Motor-Technologie. Optimal abgestimmtes 2-Gang-Vollmetallgetriebe für perfekte Kraftübertragung. Problemloser Langzeiteinsatz durch Sicherheitselektronik (permanente Über- prüfung von Akku-Temperatur, Stromentnahme und Entladeschutz).
+                              </p>
+                              <p>LendingPrice: 2 etc</p>
+                              <p>Depo: 10 etc</p>
+                              <p>Owner: Michi Zimmermann</p>
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87691.51342183871!2d7.970735584540627!3d46.619653629857176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f9eab18c79217%3A0xbfaa5c0f42972f65!2sGrindelwald!5e0!3m2!1sde!2sch!4v1545217053830" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button mat-raised-button color="warn">Rent</button>
+                            </mat-card-actions>
+                    </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <mat-card style="height:600px">
+                            <mat-card-header style="height:100px">
+                              <div mat-card-avatar class="example-header-image"></div>
+                              <mat-card-title>Prix Garantie Schlosserhammer 500 g</mat-card-title>
+                              <mat-card-subtitle>Hammer</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://www.bauundhobby.ch/img/products/930Wx620H/4037149_001.jpg?_=1542101311311" alt="Photo of a Shiba Inu" style="width:200px">
+                            <mat-card-content style="height:300px">
+                              <p>
+                                    Ein Hammer Hammer.
+                              </p>
+                              <p>LendingPrice: 1 etc</p>
+                              <p>Depo: 2 etc</p>
+                              <p>Owner: Michi Zimmermann</p>
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1369.28436975333!2d7.69579!3d46.65503141792079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478faec8803f6561%3A0xb7207c791f31adf3!2sChalet+Sunnestube!5e0!3m2!1sde!2sch!4v1545217497272" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button mat-raised-button color="warn">Rent</button>
+                            </mat-card-actions>
+                    </mat-card>
+            </mat-grid-tile>
+    </mat-grid-list>
+
+

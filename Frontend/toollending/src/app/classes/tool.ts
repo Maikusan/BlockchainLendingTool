@@ -40,7 +40,7 @@ export class Tool {
         this._availible = pAvailible;
     }
 
-    private _name:string = "Leer";
+    private _name:string = "";
     get name():string {
         return this._name;
     }
